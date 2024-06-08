@@ -21,20 +21,33 @@ end
 
 
 get("/dice/2/6") do
-  first_dice = rand(1..6)
-  second_dice = rand(1..6)
-  sum = first_dice + second_dice
+  # first_dice = rand(1..6)
+  # second_dice = rand(1..6)
+  # sum = first_dice + second_dice
 
-  @outcome = "You rolled #{first_dice} and #{second_dice} for a total of #{sum}."
+  # @outcome = "You rolled #{first_dice} and #{second_dice} for a total of #{sum}."
+  @rolls = []
+
+  2.times do
+    die = rand(1..6)
+    @rolls.push(die)
+  end
   erb(:two_six)
 end
 
 get("/dice/2/10") do
-  first_dice = rand(1..10)
-  second_dice = rand(1..10)
-  sum = first_dice + second_dice
+  # first_dice = rand(1..10)
+  # second_dice = rand(1..10)
+  # sum = first_dice + second_dice
 
-  @outcome = "You rolled #{first_dice} and #{second_dice} for a total of #{sum}."
+  # @outcome = "You rolled #{first_dice} and #{second_dice} for a total of #{sum}."
+  @rolls = []
+  
+  2.times do
+    die = rand(1..10)
+    @rolls.push(die)
+  end
+
   erb(:two_ten)
 end
 
@@ -47,14 +60,21 @@ get("/dice/1/20") do
 end
 
 get("/dice/5/4") do
-  first_dice = rand(1..4)
-  second_dice = rand(1..4)
-  third_dice = rand(1..4)
-  fourth_dice = rand(1..4)
-  fifth_dice = rand(1..4)
-  sum = first_dice + second_dice + third_dice + fourth_dice + fifth_dice
+#   first_dice = rand(1..4)
+#   second_dice = rand(1..4)
+#   third_dice = rand(1..4)
+#   fourth_dice = rand(1..4)
+#   fifth_dice = rand(1..4)
+#   sum = first_dice + second_dice + third_dice + fourth_dice + fifth_dice
 
- @outcome = "You rolled #{first_dice}, #{second_dice}, #{third_dice}, #{fourth_dice}, and #{fifth_dice} for a total of #{sum}."
+#  @outcome = "You rolled #{first_dice}, #{second_dice}, #{third_dice}, #{fourth_dice}, and #{fifth_dice} for a total of #{sum}."
+@rolls = []
+
+5.times do
+  die = rand(1..4)
+  @rolls.push(die)
+end
+
  erb(:five_four)
 end
 
@@ -98,6 +118,6 @@ get("/dice/100/6") do
     die = rand(1..6)
     @rolls.push(die)
   end
-  
+
   erb(:one_hundred_six)
 end
