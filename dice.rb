@@ -26,7 +26,7 @@ get("/dice/2/6") do
   sum = first_dice + second_dice
 
   @outcome = "You rolled #{first_dice} and #{second_dice} for a total of #{sum}."
-  erb(:two_six, {:layout => :wrapper})
+  erb(:two_six)
 end
 
 get("/dice/2/10") do
@@ -35,14 +35,14 @@ get("/dice/2/10") do
   sum = first_dice + second_dice
 
   @outcome = "You rolled #{first_dice} and #{second_dice} for a total of #{sum}."
-  erb(:two_ten, {:layout => :wrapper})
+  erb(:two_ten)
 end
 
 get("/dice/1/20") do
   icosahedron = rand(1..20)
 
   @outcome = "You rolled a #{icosahedron} on your virtual shiny math rock."
-  erb(:one_twenty, {:layout => :wrapper})
+  erb(:one_twenty)
 end
 
 get("/dice/5/4") do
@@ -54,7 +54,7 @@ get("/dice/5/4") do
   sum = first_dice + second_dice + third_dice + fourth_dice + fifth_dice
 
  @outcome = "You rolled #{first_dice}, #{second_dice}, #{third_dice}, #{fourth_dice}, and #{fifth_dice} for a total of #{sum}."
- erb(:five_four, {:layout => :wrapper})
+ erb(:five_four)
 end
 
 get("/dice/fireball") do
@@ -69,7 +69,7 @@ get("/dice/fireball") do
   total_damage  = first_dice + second_dice + third_dice + fourth_dice + fifth_dice + sixth_dice + seventh_dice + eighth_dice
 
   @outcome = "You casted Fireball at level 3. Your shiny math rocks clink around [#{first_dice}, #{second_dice}, #{third_dice}, #{fourth_dice}, #{fifth_dice}, #{sixth_dice}, #{seventh_dice}, #{eighth_dice}] for a total of #{total_damage} fire damage "
- erb(:fireball, {:layout => :wrapper})
+ erb(:fireball)
 
 end
 
@@ -80,12 +80,12 @@ get("/dice/greatsword") do
   sum = first_dice + second_dice
 
   @outcome = "You swing your greatsword [#{first_dice}, #{second_dice}] for a total of #{sum} slashing damage."
-  erb(:greatsword, {:layout => :wrapper})
+  erb(:greatsword)
 end 
 
 get("/dice/greataxe") do
   axe_dice = rand(1..12)
 
   @outcome = "You swing your greatsword for a total of #{axe_dice} slashing damage."
-  erb(:greataxe, {:layout => :wrapper})
+  erb(:greataxe)
 end 
